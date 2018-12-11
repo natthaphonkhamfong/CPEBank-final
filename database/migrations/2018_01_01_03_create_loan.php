@@ -14,7 +14,7 @@ class CreateLoan extends Migration
     public function up()
     {
         Schema::create('loan', function (Blueprint $table) {
-            $table->increments('nId')->primary()->unsigned();
+            $table->increments('nId')->unsigned();
             $table->enum('nType', ['SME', 'EDU', 'HOME', 'PERSONAL']);
             $table->float('nAmount')->default(0);
             $table->float('nReturn')->default(0);

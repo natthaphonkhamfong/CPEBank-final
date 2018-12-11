@@ -14,7 +14,7 @@ class CreateBankBranch extends Migration
     public function up()
     {
         Schema::create('bank_branch', function (Blueprint $table) {
-            $table->increments('bbId')->unsigned()->primary();
+            $table->increments('bbId')->unsigned();
             $table->string('bbName',150);
             $table->string('bbBranchName',150);
             $table->string('bbStreet', 200)->nullable();

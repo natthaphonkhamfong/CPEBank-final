@@ -14,7 +14,7 @@ class CreateCustomer extends Migration
     public function up()
     {
         Schema::create('customer', function (Blueprint $table) {
-            $table->increments('cusId')->primary()->unsigned();
+            $table->increments('cusId')->unsigned();
             $table->string('cusNumber',11);
             $table->float('balance');
             $table->unsignedInteger('accId');

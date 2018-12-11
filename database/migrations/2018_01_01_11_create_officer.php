@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateForeignKey extends Migration
+class CreateOfficer extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateForeignKey extends Migration
      */
     public function up()
     {
-        Schema::table('account_information', function (Blueprint $table) {
-            $table->foreign('userId')->references('accId')->on('account')->onDelete('cascade');
+        Schema::create('officer', function (Blueprint $table) {
+            $table->increments('empId')->unsigned();
+            $table->enum('empType',['debt','crm']);
+            $table->json('empMeetNote')->nullable();
+            $table->unsignedInteger('accId');
         });
     }
 
@@ -25,6 +28,6 @@ class CreateForeignKey extends Migration
      */
     public function down()
     {
-
+        Schema::dropIfExists('officer');
     }
 }

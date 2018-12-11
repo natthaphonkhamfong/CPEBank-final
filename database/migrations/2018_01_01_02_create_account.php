@@ -14,7 +14,7 @@ class CreateAccount extends Migration
     public function up()
     {
         Schema::create('account', function (Blueprint $table) {
-            $table->increments('accId')->unsigned()->primary();
+            $table->increments('accId')->unsigned();
             $table->string('email', 150)->unique();
             $table->string('username', 256)->unique();
             $table->string('password', 256);
