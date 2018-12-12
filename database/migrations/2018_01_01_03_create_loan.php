@@ -22,7 +22,7 @@ class CreateLoan extends Migration
             $table->json('nAssets');
             $table->date('nStartLoan');
             $table->date('nPayBackNext');
-            $table->integer('cusId');
+            $table->integer('cusId')->unsigned();
         });
     }
 

@@ -15,7 +15,7 @@ class CreateAccountInformation extends Migration
     {
 
         Schema::create('account_information', function (Blueprint $table) {
-            $table->integer('userId')->primary()->unique()->unsigned();
+            $table->integer('userId')->unique()->unsigned()->primary();
             $table->string('accName', 150);
             $table->string('accLastName', 150);
             $table->string('accPhone', 10)->unique();

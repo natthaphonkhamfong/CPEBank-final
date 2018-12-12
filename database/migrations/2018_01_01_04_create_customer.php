@@ -18,7 +18,7 @@ class CreateCustomer extends Migration
             $table->string('cusNumber',11);
             $table->float('balance');
             $table->unsignedInteger('accId');
-            $table->unsignedInteger('bbId');
+            $table->unsignedInteger('bbId')->nullable();
         });
     }
 

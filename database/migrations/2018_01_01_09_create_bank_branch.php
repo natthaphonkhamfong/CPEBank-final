@@ -19,9 +19,9 @@ class CreateBankBranch extends Migration
             $table->string('bbBranchName',150);
             $table->string('bbStreet', 200)->nullable();
             $table->json('bbPhones')->nullable();
-            $table->unsignedInteger('amphures_id');
-            $table->string('districts_id',6);
-            $table->unsignedInteger('hqId');
+            $table->unsignedInteger('amphures_id')->nullable();
+            $table->string('districts_id',6)->nullable();
+            $table->unsignedInteger('hqId')->nullable();
         });
     }
 
